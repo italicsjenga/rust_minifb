@@ -263,7 +263,7 @@ unsafe extern "C" fn char_callback(window: *mut c_void, code_point: u32) {
 
 unsafe impl raw_window_handle::HasRawWindowHandle for Window {
     fn raw_window_handle(&self) -> raw_window_handle::RawWindowHandle {
-        let mut handle = raw_window_handle::AppKitHandle::empty();
+        let mut handle = raw_window_handle::AppKitWindowHandle::empty();
         handle.ns_window = self.window_handle as *mut _;
         handle.ns_view = self.view_handle as *mut _;
         raw_window_handle::RawWindowHandle::AppKit(handle)

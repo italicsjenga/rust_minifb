@@ -428,7 +428,7 @@ impl Menu {
 unsafe impl raw_window_handle::HasRawWindowHandle for Window {
     fn raw_window_handle(&self) -> raw_window_handle::RawWindowHandle {
         //TODO: assign a different ID to each window
-        let handle = raw_window_handle::WebHandle::empty();
+        let handle = raw_window_handle::WebWindowHandle::empty();
         raw_window_handle::RawWindowHandle::Web(handle)
     }
 }
