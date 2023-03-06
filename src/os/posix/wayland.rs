@@ -1283,7 +1283,7 @@ unsafe impl raw_window_handle::HasRawDisplayHandle for Window {
             .as_ref()
             .c_ptr() as *mut _ as *mut c_void;
 
-        RawDisplayHandle::Wayland(handle)
+        raw_window_handle::RawDisplayHandle::Wayland(handle)
     }
 }
 

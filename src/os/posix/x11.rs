@@ -338,12 +338,12 @@ unsafe impl raw_window_handle::HasRawWindowHandle for Window {
     }
 }
 
-unsafe impl HasRawDisplayHandle for Window {
+unsafe impl raw_window_handle::HasRawDisplayHandle for Window {
     fn raw_display_handle(&self) -> raw_window_handle::RawDisplayHandle {
         let mut handle = raw_window_handle::XlibDisplayHandle::empty();
         handle.display = self.d.display as *mut core::ffi::c_void;
 
-        RawDisplayHandle::Xlib(handle)
+        raw_window_handle::RawDisplayHandle::Xlib(handle)
     }
 }
 
