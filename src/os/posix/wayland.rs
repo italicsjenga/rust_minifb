@@ -1274,7 +1274,7 @@ unsafe impl raw_window_handle::HasRawWindowHandle for Window {
 
 unsafe impl raw_window_handle::HasRawDisplayHandle for Window {
     fn raw_display_handle(&self) -> raw_window_handle::RawDisplayHandle {
-        let mut handle = WaylandDisplayHandle::empty();
+        let mut handle = raw_window_handle::WaylandDisplayHandle::empty();
         handle.display = self
             .display
             .attached_display
