@@ -423,6 +423,8 @@ void mfb_set_title(void* window, const char* title)
 	[win setTitle: ns_title];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-parameter"
 void mfb_set_cursor_visibility(void *window, bool visibility)
 {
 	if (visibility){
@@ -432,6 +434,7 @@ void mfb_set_cursor_visibility(void *window, bool visibility)
 		[NSCursor hide];
 	}
 }
+#pragma clang diagnostic pop
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
